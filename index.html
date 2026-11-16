@@ -79,28 +79,6 @@
   .qr { width: 220px; height: 220px; background: #fff; padding: 14px; border: 2px solid var(--color-ink); }
   .qr svg { width: 100%; height: 100%; display: block; }
 
-  /* 4. 일상 자동화 */
-  .auto { display: grid; grid-template-columns: 1fr 560px; gap: 80px; margin-top: 48px; flex: 1; min-height: 0; }
-  .flow { list-style: none; position: relative; }
-  .flow li { display: grid; grid-template-columns: 64px 1fr; gap: 24px; padding: 0 0 30px; position: relative; }
-  .flow li::before { content: ""; position: absolute; left: 31px; top: 64px; bottom: 0; width: 2px; background: var(--color-ink); }
-  .flow li:last-child::before { display: none; }
-  .flow .n { width: 64px; height: 64px; display: grid; place-items: center; background: var(--color-ink); color: #fff;
-             font-size: 24px; font-weight: 700; font-variant-numeric: tabular-nums; }
-  .flow li:last-child .n { background: var(--color-accent); }
-  .flow b { display: block; font-size: 32px; line-height: 1.3; }
-  .flow small { display: block; font-size: 23px; line-height: 1.45; color: var(--color-ink-muted); margin-top: 6px; }
-  .tg { background: var(--color-surface); border: 2px solid var(--color-ink); padding: 28px; display: flex; flex-direction: column; gap: 18px; }
-  .tg-head { display: flex; justify-content: space-between; align-items: center; font-size: 22px; font-weight: 700; }
-  .tg-head span:last-child { color: var(--color-ink-muted); font-weight: 400; }
-  .bubble { background: #fff; padding: 22px 26px; font-size: 21px; line-height: 1.5; border-left: 6px solid var(--color-accent); }
-  .bubble h4 { font-size: 23px; margin-bottom: 10px; }
-  .bubble p { margin-top: 10px; font-weight: 700; }
-  .bubble ul { list-style: none; color: var(--color-ink-muted); }
-  .bubble time { display: block; text-align: right; font-size: 17px; color: var(--color-ink-muted); margin-top: 8px; }
-  .chips { display: flex; gap: 10px; }
-  .chips span { font-size: 17px; font-weight: 700; padding: 7px 10px; white-space: nowrap; border: 2px solid var(--color-ink); }
-
   .foot { margin-top: auto; padding-top: 24px; display: flex; justify-content: space-between;
           font-size: 22px; color: var(--color-ink-muted); }
   .inverse .foot { color: var(--color-ink-inverse-muted); }
@@ -121,7 +99,7 @@
 
   <!-- 1. 문제 -->
   <div class="frame"><section class="slide" aria-label="1. 문제">
-    <div class="top"><span>GAEUL HANSANG · 6주차 발표</span><span class="no">01 / 06 · 문제</span></div>
+    <div class="top"><span>GAEUL HANSANG · 6주차 발표</span><span class="no">01 / 05 · 문제</span></div>
     <div class="cover-mark">가을 한상<i></i></div>
     <div class="rule"></div>
     <div class="cols" style="grid-template-columns: 1fr 1fr; margin-top: 40px;">
@@ -137,7 +115,7 @@
 
   <!-- 2. 만든 것 -->
   <div class="frame"><section class="slide" aria-label="2. 만든 것">
-    <div class="top"><span>WHAT I BUILT</span><span class="no">02 / 06 · 만든 것</span></div>
+    <div class="top"><span>WHAT I BUILT</span><span class="no">02 / 05 · 만든 것</span></div>
     <h2 class="title">한 페이지 식당 사이트 + 방명록</h2>
     <div class="cols" style="grid-template-columns: 1.15fr 0.85fr;">
       <ul class="list">
@@ -161,7 +139,7 @@
 
   <!-- 3. 데모 영상 -->
   <div class="frame"><section class="slide inverse" aria-label="3. 데모 영상">
-    <div class="top"><span>DEMO</span><span class="no">03 / 06 · 데모 영상</span></div>
+    <div class="top"><span>DEMO</span><span class="no">03 / 05 · 데모 영상</span></div>
     <div class="demo">
       <div class="phone">
         <img class="poster" src="assets/frame-3.2.jpg" alt="소개 영상 메뉴 장면">
@@ -186,40 +164,9 @@
     </div>
   </section></div>
 
-  <!-- 4. 일상 자동화 (7주차) -->
-  <div class="frame"><section class="slide" aria-label="4. 일상 자동화">
-    <div class="top"><span>DAILY AUTOMATION · 7주차</span><span class="no">04 / 06 · 일상 자동화</span></div>
-    <h2 class="title">매일 아침 6:40, 출근길이 먼저 온다</h2>
-    <div class="auto">
-      <div style="display:flex; flex-direction:column; min-height:0;">
-        <p class="lead" style="margin-top:0; font-size:32px;">집 나서기 전 지하철·버스 앱을 번갈아 여는 대신,<br>필요한 것만 텔레그램 한 통으로 받는다.</p>
-        <ol class="flow" style="margin-top:40px;">
-          <li><span class="n">01</span><span><b>공공 오픈 API 두 곳</b><small>공공데이터포털 TAGO 버스도착정보 · 서울 열린데이터광장 실시간 지하철 도착</small></span></li>
-          <li><span class="n">02</span><span><b>Claude Code로 만든 스크립트</b><small>망포(수인분당선) → 수원 환승 → 진위(1호선). 진위까지 안 가는 서동탄·병점행은 걸러 냄. 실시간이 안 되면 시간표로 대신</small></span></li>
-          <li><span class="n">03</span><span><b>Hermes 예약 작업</b><small>평일 06:40 · LLM 없이 스크립트 출력을 그대로 전달(no-agent)</small></span></li>
-          <li><span class="n">04</span><span><b>텔레그램으로 도착</b><small>인증키는 스크립트가 아닌 별도 .env에만 보관</small></span></li>
-        </ol>
-      </div>
-      <div class="tg">
-        <div class="tg-head"><span>Hermes 봇</span><span>평일 06:40</span></div>
-        <div class="bubble">
-          <h4>🚇🚌 출근 교통 알림</h4>
-          <p>망포 → 수원 (수인분당선 인천 방면)</p>
-          <ul><li>• 인천행 — 전역 도착</li><li>• 인천행 — [7]번째 전역 (보정)</li></ul>
-          <p>수원 환승 → 진위 (1호선 천안·신창 방면)</p>
-          <ul><li>• 신창행 — [5]번째 전역 (군포)</li><li>• 천안행 (급행) — [6]번째 전역 (금정)</li></ul>
-          <p>🚌 수원버스터미널(2213)</p>
-          <ul><li>• 300번 — 1분 후 (1정거장 전)</li><li>• 81번 — 13분 후 (9정거장 전)</li><li>• 300-1번 — 21분 후 (12정거장 전)</li></ul>
-          <time>11/16 실제 수신 내용</time>
-        </div>
-        <div class="chips"><span>공공데이터포털</span><span>열린데이터광장</span><span>Hermes cron</span><span>Telegram</span></div>
-      </div>
-    </div>
-  </section></div>
-
-  <!-- 5. 배운 점 -->
-  <div class="frame"><section class="slide" aria-label="5. 배운 점">
-    <div class="top"><span>LEARNED</span><span class="no">05 / 06 · 배운 점</span></div>
+  <!-- 4. 배운 점 -->
+  <div class="frame"><section class="slide" aria-label="4. 배운 점">
+    <div class="top"><span>LEARNED</span><span class="no">04 / 05 · 배운 점</span></div>
     <h2 class="title">AI에게 “기준”을 먼저 준다</h2>
     <div class="cols" style="grid-template-columns: 1fr 1fr;">
       <ul class="list">
@@ -235,9 +182,9 @@
     </div>
   </section></div>
 
-  <!-- 6. 다음 계획 -->
-  <div class="frame"><section class="slide inverse" aria-label="6. 다음 계획">
-    <div class="top"><span>NEXT</span><span class="no">06 / 06 · 다음 계획</span></div>
+  <!-- 5. 다음 계획 -->
+  <div class="frame"><section class="slide inverse" aria-label="5. 다음 계획">
+    <div class="top"><span>NEXT</span><span class="no">05 / 05 · 다음 계획</span></div>
     <h2 class="title">다음 계획</h2>
     <div class="cols" style="grid-template-columns: 1.2fr 0.8fr;">
       <ul class="list">
